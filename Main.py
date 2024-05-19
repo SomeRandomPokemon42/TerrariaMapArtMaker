@@ -79,11 +79,12 @@ def Draw(event):
     mouse = (event.x, event.y)
     hoverObject = "null"
     try:
-        hoverObject = ImageToBlocks.GetClosestColor(NewImage[mouse[0]][mouse[1]])
+        hoverObject = ImageToBlocks.GetClosestColor(NewImage[mouse[1]][mouse[0]])
     except IndexError:
         hoverObject = "null"
-    tkelements[-1].configure(text= str(mouse) + "  " + str(hoverObject))
-    tkelements[-1].pack()
+    finally:
+        tkelements[-1].configure(text= str(mouse) + "  " + str(hoverObject))
+        tkelements[-1].pack()
 
 
 # load the final ui

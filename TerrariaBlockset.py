@@ -1,8 +1,7 @@
 Blockset = {
 	(128,128,128) : "Stone Block",
-	(52,52,52): "Inactive Stone Block",
 	(73,51,36): "Wooden Beam",
-	#(151,107,75): "Dirt Block",
+	#(151,107,75): "Dirt Block", # Same as Wood Block
     (200,246,254): "Glass Block",
 	(151,107,75): "Wood Block",
 	(191,142,111): "Platform",
@@ -10,8 +9,12 @@ Blockset = {
 	(106,107,118): "Silt",
 	(181,62,59): "Brick Block",
 	(146,81,68): "Clay Block",
+    # Mechanical
+    (240,240,240):"Pixel Box",
+    (52,52,52): "Inactive Stone Block",
 	# NPC
 	(121,119,101): "Cog",
+    (31,31,31): "Smoke Block",
 	(251,209,240): "Bubble Block",
 	# Christmas
 	(192,30,30): "Red Candy Cane",
@@ -31,8 +34,10 @@ Blockset = {
 	(172,155,110): "Glowing Mushroom Beam",
 	# Marble
 	(168,178,204): "Marble Block",
+    (148,158,184): "Marble Column",
 	# Granite
 	(50,46,104): "Granite Block",
+    (30,26,84): "Granite Column",
 	# Dungeon
 	(84,100,63): "Green Dungeon Brick",
 	(66,84,109): "Blue Dungeon Brick",
@@ -43,8 +48,10 @@ Blockset = {
 	(144,195,232): "Ice Block",
 	(124,175,201): "Ice Brick",
 	(96,77,64): "Boreal Wood",
+    (76,57,44): "Boreal Wood Beam",
 	(211,236,241): "Snow Block",
 	(107,132,139): "Slush Block",
+    (29,240,255): "Living Frost Fire Block",
 	# Sky
 	(223,255,255): "Cloud Block",
 	(147,144,178): "Raining Cloud Block",
@@ -53,20 +60,24 @@ Blockset = {
 	# Hell
 	(68,68,76): "Ash Block",
 	(253,62,3): "Living Fire Block",
+    (105,74,202): "Living Demon Fire Block",
 	(43,40,84): "Obsidian",
 	(26,26,26): "Obsidian Brick",
 	(142,66,66): "Hellstone Brick or Ore",
 	# Crimson, No spreading blocks
 	(108,34,35): "Crimstone Brick",
 	(88,105,118): "Shadewood",
+    (254,202,80): "Living Ichor Block",
 	# Hallow, No spreading blocks
 	(238,225,218): "Pearlstone Brick",
     (148,133,98): "Pearlwood",
 	# Corruption, No spreading blocks
 	(104,100,126): "Ebonwood",
 	(128,133,184): "Ebonstone Brick",
+    (96,248,2): "Living Cursed Flame Block",
 	# Jungle
 	(145,81,85): "Rich Mahogany",
+    (125,61,65): "Rich Mahogany Beam",
 	(221,136,144): "Living Rich Mahogany",
 	(131,206,12): "Living Rich Mahogany Leaves",
 	(92,68,73): "Mud Block",
@@ -74,7 +85,7 @@ Blockset = {
 	(131,79,13): "Crispy Honey Block",
 	(227,125,22): "Hive Block",
 	(141,56,0): "Lizhard Brick",
-	(145,81,85): "Lizhard Spikes",
+	#(145,81,85): "Lizhard Spikes", # Same as Rich Mahogany
 	(165,168,26): "Bamboo",
 	# Desert
 	(178,104,58): "Sandstone Column",
