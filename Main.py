@@ -1,7 +1,6 @@
 # External
 import tkinter, tkinter.filedialog
 import PIL.Image, PIL.ImageTk
-import imageio
 import numpy
 # Internal
 import ImageToBlocks
@@ -27,7 +26,8 @@ tkelements[-1].pack()
 window.update_idletasks()
 window.update()
 # Read the image
-file = imageio.v3.imread(filePath)
+file = PIL.Image.open(filePath).convert("RGB")
+file = numpy.array(file)
 
 
 imageSize = (len(file), len(file[0]))
@@ -70,7 +70,6 @@ NewImageFile = PIL.Image.fromarray(NewImage.astype(numpy.uint8))
 NewImageFile.save("output.png")
 
 
-print(pixelsPerTile)
 TKImage = PIL.ImageTk.Image.open(fp="output.png")
 TKImage = PIL.ImageTk.PhotoImage(TKImage)
 
