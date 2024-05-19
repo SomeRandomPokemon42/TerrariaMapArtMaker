@@ -1,11 +1,13 @@
+# External
 import tkinter, tkinter.filedialog
-import PIL.Image
-import PIL.ImageTk
+import PIL.Image, PIL.ImageTk
 import imageio
-import ImageToBlocks
 import numpy
+# Internal
+import ImageToBlocks
 
 
+# Spend 5 years to make a preview image instead of displaying the raw image.
 take5YearsToProcess = False
 
 window = tkinter.Tk()
@@ -63,19 +65,17 @@ if (take5YearsToProcess):
 else:
     NewImage = numpy.array(file)
 
-
+# Save the image as "output.png" so that it can load into TKinter, mainly for if preview is enabled
 NewImageFile = PIL.Image.fromarray(NewImage.astype(numpy.uint8))
 NewImageFile.save("output.png")
 
 
 print(pixelsPerTile)
 TKImage = PIL.ImageTk.Image.open(fp="output.png")
-#TKImage.resize((imageSize[0] * pixelsPerTile, imageSize[1] * pixelsPerTile))
 TKImage = PIL.ImageTk.PhotoImage(TKImage)
 
 
 def Draw(event):
-    #mouse = (round(event.x/pixelsPerTile), round(event.y/pixelsPerTile))
     mouse = (event.x, event.y)
     hoverObject = "null"
     try:

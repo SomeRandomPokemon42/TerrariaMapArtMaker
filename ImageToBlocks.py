@@ -13,7 +13,7 @@ def Vector3Distance(vector1, vector2):
 
 def GetClosestColorInt(DesiredColor, blockset = TerrariaBlockset.Blockset):
 	closestColor = (0,0,0)
-	colorDistance = 999
+	colorDistance = 9999
 	for color in blockset.keys():
 		colorDist = Vector3Distance(color, DesiredColor)
 		if colorDist < colorDistance:
