@@ -11,7 +11,8 @@ def Vector3Distance(vector1, vector2):
 		vector3 = (vector3[0], vector3[1], -vector3[2])
 	return vector3[0] + vector3[1] + vector3[2]
 
-def GetClosestColorInt(DesiredColor, blockset = TerrariaBlockset.Blockset):
+def GetClosestColorInt(DesiredColor, allowPaint = False):
+	blockset = TerrariaBlockset.GetBlockset(allowPaint)
 	closestColor = (0,0,0)
 	colorDistance = 9999
 	for color in blockset.keys():
@@ -22,5 +23,5 @@ def GetClosestColorInt(DesiredColor, blockset = TerrariaBlockset.Blockset):
 	return closestColor
 
 
-def GetClosestColor(DesiredColor, blockset = TerrariaBlockset.Blockset):
-	return blockset[GetClosestColorInt(DesiredColor, blockset)]
+def GetClosestColor(DesiredColor, allowPaint = False):
+	return TerrariaBlockset.GetBlockset(allowPaint)[GetClosestColorInt(DesiredColor, allowPaint)]

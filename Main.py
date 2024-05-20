@@ -8,6 +8,9 @@ import ImageToBlocks
 
 # Spend 5 years to make a preview image instead of displaying the raw image.
 take5YearsToProcess = False
+# Allow painted blocks to be considered
+allowPaint = False
+
 
 window = tkinter.Tk()
 window.wm_resizable(width= False, height= False) # ban resizing
@@ -59,7 +62,7 @@ if (take5YearsToProcess):
         window.update()
         # Actually do the row
         for y in range(0, imageSize[1]):
-            NewImage[-1].append(list(ImageToBlocks.GetClosestColorInt(file[x][y])))
+            NewImage[-1].append(list(ImageToBlocks.GetClosestColorInt(file[x][y], allowPaint)))
     # Load the image on the screen
     NewImage = numpy.array(NewImage)
 else:
@@ -78,7 +81,7 @@ def Draw(event):
     mouse = (event.x, event.y)
     hoverObject = "null"
     try:
-        hoverObject = ImageToBlocks.GetClosestColor(NewImage[mouse[1]][mouse[0]])
+        hoverObject = ImageToBlocks.GetClosestColor(NewImage[mouse[1]][mouse[0]], allowPaint)
     except IndexError:
         hoverObject = "null"
     finally:
